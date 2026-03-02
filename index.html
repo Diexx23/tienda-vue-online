@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Vue</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100 font-[Inter]">
+
+<div id="app" class="max-w-7xl mx-auto p-6">
+
+  <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+
+    <h1 class="text-3xl font-bold">
+      Tienda de ropa online
+    </h1>
+
+    <button 
+      @click="toggleCartVisibility"
+      class="bg-black text-white px-4 py-2 rounded-lg"
+    >
+      Carrito ({{ cart.length }})
+    </button>
+
+  </div>
+
+  <!-- Carrito -->
+  <div v-if="cartVisible" class="bg-white p-4 rounded-xl shadow mb-6">
+
+    <h2 class="font-bold mb-3">Productos en carrito</h2>
+
+    <div v-if="cart.length === 0">
+      El carrito está vacío.
+    </div>
+
+    <div v-else>
+      <div 
+        v-for="product in products.filter(p => cart.includes(p.id))" 
+        :key="product.id"
+        class="flex justify-between mb-2"
+      >
+        <span>{{ product.name }}</span>
+        <span>$ {{ product.price.toLocaleString('es-CO') }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Buscador -->
+  <div class="mb-6">
+    <input 
+      v-model="searchQuery"
+      type="text"
+      placeholder="Buscar producto..."
+      class="w-full p-3 rounded-lg border"
+    >
+  </div>
+
+  <!-- Estados -->
+  <div v-if="isLoading" class="text-center">
+    Cargando productos...
+  </div>
+
+  <div v-else-if="filteredProducts.length === 0" class="text-center text-gray-500">
+    No se encontraron productos.
+  </div>
+
+  <!-- Grid Responsivo -->
+  <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+    <product-card
+      v-for="product in filteredProducts"
+      :key="product.id"
+      :product="product"
+      @toggle-cart="toggleProductInCart"
+      :is-in-cart="isProductInCart(product.id)"
+    ></product-card>
+
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Oversize Beige",
+    "price": 89000,
+    "images": [
+      "assets/images/product1-1.jpg",
+      "assets/images/product1-2.jpg",
+      "assets/images/product1-3.jpg"
+    ],
+    "category": "ropa"
+  },
+  {
+    "id": 2,
+    "name": "Hoodie Negra Premium",
+    "price": 149000,
+    "images": [
+      "assets/images/product2-1.jpg",
+      "assets/images/product2-2.jpg",
+      "assets/images/product2-3.jpg"
+    ],
+    "category": "ropa"
+  },
+  {
+    "id": 3,
+    "name": "Pantalón Cargo Gris",
+    "price": 169000,
+    "images": [
+      "assets/images/product3-1.jpg",
+      "assets/images/product3-2.jpg",
+      "assets/images/product3-3.jpg"
+    ],
+    "category": "ropa"
+  },
+  {
+    "id": 4,
+    "name": "Chaqueta Denim Azul",
+    "price": 199000,
+    "images": [
+      "assets/images/product4-1.jpg",
+      "assets/images/product4-2.jpg",
+      "assets/images/product4-3.jpg"
+    ],
+    "category": "ropa"
+  },
+  {
+    "id": 5,
+    "name": "Gorra Street Negra",
+    "price": 69000,
+    "images": [
+      "assets/images/product5-1.jpg",
+      "assets/images/product5-2.jpg",
+      "assets/images/product5-3.jpg"
+    ],
+    "category": "accesorios"
+  },
+  {
+    "id": 6,
+    "name": "Tenis Urban White",
+    "price": 249000,
+    "images": [
+      "assets/images/product6-1.jpg",
+      "assets/images/product6-2.jpg",
+      "assets/images/product6-3.jpg"
+    ],
+    "category": "calzado"
+  }
+]
